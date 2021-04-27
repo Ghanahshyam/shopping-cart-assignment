@@ -12,9 +12,9 @@ export class ProductsService {
   constructor(private restApiService: RestApiService) { }
 
   urls = {
-    offerbanners:'http://my-json-server.typicode.com/Ghanahshyam/sabka-bajar-mock-apis/banners',
-    productCategory: 'http://my-json-server.typicode.com/Ghanahshyam/sabka-bajar-mock-apis/categories',
-    productsList: 'http://my-json-server.typicode.com/Ghanahshyam/sabka-bajar-mock-apis/products'   
+    offerbanners:'https://my-json-server.typicode.com/Ghanahshyam/sabka-bajar-mock-apis/banners',
+    productCategory: 'https://my-json-server.typicode.com/Ghanahshyam/sabka-bajar-mock-apis/categories',
+    productsList: 'https://my-json-server.typicode.com/Ghanahshyam/sabka-bajar-mock-apis/products'   
   }
 
   getProductCategoryList() {
