@@ -1,0 +1,96 @@
+@import 'helper';
+
+.main-container {
+    display: flex;
+    overflow: auto;
+    width: 80%;
+    margin: 0 10%;
+    
+    .aside-category-wrapper {
+        flex: 0 0 20%;
+        background-color: $aside-category-bg-color; 
+        
+        .category {
+            font-weight: 500;
+            font-size: 75%;
+            margin: 1.5%;
+            padding: 5%;
+            color: #808080;
+            border-bottom: 1px solid #cccccc;  
+            cursor:pointer;
+            
+            &:hover,
+            &:active,
+            &.active {
+                background-color: #ccc;
+            }
+        }
+
+        .category:last-of-type {
+            border-bottom: none;
+        }
+    }
+
+    .products-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 0 0 80%;
+       
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 22.35%;
+            width: 30%;
+            margin: 1%;
+            box-shadow: 2px 0 3px -3px #888;
+            border-bottom: 1px dashed darkgrey;
+
+            .product-details__name {
+                font-weight: 600;
+                height: 13%;
+                margin-bottom: 1px;
+            }
+
+            .product-details__image {
+                width: 100%;
+                height: 40%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .product-details__description {
+                font-size: 60%;
+                font-weight: 600;
+                background: #f6f6f6;
+                width: 100%;
+                padding: 10px;
+                height: -webkit-fill-available;
+            }
+
+            .product-details__buy-info {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                margin-top: -6%;
+                padding: 0px 5px;
+
+                .product-details__price {
+                    font-size: 55%;
+                    font-weight: 500;
+                }
+                .btn--small {
+                    background-color: $theme-magenta;
+                    font-size: 60%;
+                    font-weight: 600;
+                    color: #fff;
+                    border-radius: 1px;
+                }   
+            }
+
+        }
+    }
+}

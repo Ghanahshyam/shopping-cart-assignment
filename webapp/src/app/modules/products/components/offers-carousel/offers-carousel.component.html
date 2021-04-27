@@ -1,0 +1,8 @@
+<section class="section-offers-carousel">
+    <carousel class="sb-carousel">
+        <slide *ngFor="let offer of offerList">
+          <img [src]="offer.imgPath" [alt]="offer.altName" class="offer-img">
+        </slide>        
+    </carousel>
+    <div id="grad1"></div>
+</section>

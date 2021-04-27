@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body {  
+    text-rendering: optimizeLegibility;
+    overflow-x:hidden; 
+}
+
+body {
+    margin:0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px; 
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+}
+
+*:focus {
+    outline: none;
+}
+
+$input-bottom-border-color:#87ceeb;
+
+/* --------------LINKS --------- */
+a:link,
+a:visited {
+    text-decoration: none;
+}
+.form-control {
+    border: none;
+    border-bottom: 1px solid grey;
+    border-radius: 1px;
+    width: 140%; 
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border-bottom: 1.5px solid $input-bottom-border-color;    
+    margin: 10px 0px;
+}
+
+.form-control:focus ~ .label {
+    top: -10px;
+    left: 0;
+    position: absolute;
+    font-weight: 500;
+    font-size: 70%;
+    color: $input-bottom-border-color;
+}
+
+.form-control:not(:focus) ~ .label {
+    display: none;
+}

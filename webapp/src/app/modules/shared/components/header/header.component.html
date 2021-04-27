@@ -1,0 +1,35 @@
+<header class="sb-header" role="banner">
+    <div class="header-container"> 
+        <img src="static/images/logo_2x.png" alt="sabka-bajar-logo" class="header__logo">
+
+        <nav class="header-nav" role="navigation">
+            <ul>
+                <li> 
+                    <a [routerLink]="['/products/home']">Home</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/products/list']">Product</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header-nav__right">
+            <div class="login-register">
+                <a [routerLink]="['/user/login']">SignIn</a>
+                <a [routerLink]="['/user/register']">Register</a>
+            </div>
+    
+            <div class="cart-overview">
+                <div class="cart-overview__icon">
+                    <sb-cart-svg [fillColor]="cartFillColor"></sb-cart-svg>
+                </div>
+                <div class="cart-overview__count">
+                    0 <span class="cart-text">&nbsp;items</span>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+            
+</header>

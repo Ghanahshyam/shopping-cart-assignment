@@ -1,0 +1,12 @@
+<ng-container *ngFor="let category of productCategoryList|removeNoImageCategory;let i=index;">
+    <section class="section-category-overview" *ngIf="category.imageUrl" [ngClass]="{'category-overview-switch':i%2!=0}">    
+        <div class="category-image">
+            <img [src]="category.imageUrl" [alt]="category.name">
+        </div>
+        <div class="category-content">
+            <h4 class="category-content__heading">{{category.name}}</h4>
+            <p class="category-content__description">{{category.description}} </p>
+            <a class="category-content__product-link" [routerLink]="['/products/list']">Explore {{category.name}}</a>
+        </div>
+    </section>
+</ng-container>

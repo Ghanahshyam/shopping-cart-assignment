@@ -1,0 +1,21 @@
+<main class="main-container">
+    <aside class="aside-category-wrapper">
+        <div class="category" *ngFor="let category of productCategoryList | removeNoImageCategory">
+            {{ category.name }}
+        </div>
+    </aside>
+    <!-- <sb-product-details-card></sb-product-details-card> -->
+    <section class="products-wrapper">
+        <article class="product-details" *ngFor="let product of productList">
+            <h6 class="product-details__name">{{product.name}}</h6>
+            <div class="product-details__image">
+                <img src="{{product.imageURL}}" alt="{{product.name}}">
+            </div>
+            <p class="product-details__description">{{product.description}}</p>
+            <div class="product-details__buy-info">
+                <p class="product-details__price"><span>MRP Rs.{{product.price}}</span></p>
+                <a class="btn btn--small">Buy Now</a>
+            </div>         
+        </article>
+    </section>
+</main>

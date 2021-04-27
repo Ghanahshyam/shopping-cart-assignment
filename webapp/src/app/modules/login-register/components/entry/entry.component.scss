@@ -1,0 +1,24 @@
+.section__login-register {   
+    min-height: 270px;
+}
+
+.login-register-container {
+    display: flex;
+    margin-left: 15%;
+    padding-top: 50px;
+
+    .sb-aside {
+        display: flex;
+        flex-direction: column;
+        margin-right: 60px;
+        // justify-content: center;
+    
+        .sb-aside__head {
+            font-weight: 600;
+        }
+        .sb-aside__text {
+            font-size: 65%;
+            font-weight: 600;
+        }
+    }
+}

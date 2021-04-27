@@ -1,0 +1,17 @@
+<section class="section__login-register"> 
+    <div class="login-register-container">
+        <aside class="sb-aside">
+            <ng-container *ngIf="page==='login'; else signup">
+                <h1 class="sb-aside__head"> Login </h1>
+                <p class="sb-aside__text">Get access to your Orders, Wishlist and Recommendations.</p>
+            </ng-container>
+        </aside>
+        <router-outlet></router-outlet>
+    </div>
+</section>
+
+
+<ng-template #signup>
+    <h1 class="sb-aside__head"> Signup </h1>
+    <p class="sb-aside__text">We don not share your personal details with anyone.</p>
+</ng-template>

@@ -1,0 +1,37 @@
+@import 'helper';
+
+.login-form {
+    display: flex;
+}
+
+form {
+   display: flex;
+   flex-direction: column;
+
+    .input-container {
+        position: relative;
+        margin-bottom: 10%;
+    }
+
+    .btn {
+        color: $btn-color;
+    }
+
+    .btn--submit {
+        border-radius: 2px;
+        background-color: $btn-submit-bg-color;   
+        margin: 10% 0;
+        width: 142%;
+    }
+
+    .btn--submit:active,
+    .btn--submit:hover,
+    .btn--submit:visited,
+    .btn--submit:focus {
+        background-color: $btn-submit-bg-color-hover;  
+        transform: scale(1.01);
+        box-shadow: none;
+        border: none;
+        outline: none;
+    }
+}

@@ -1,0 +1,12 @@
+$footer-bg-color: #e6e4e4ab;
+.sb-footer {
+    background-color: $footer-bg-color;
+    
+    .sb-footer__text {
+        margin-bottom: auto;
+        margin-left: 10%;
+        font-size: 65%;
+        font-weight: 600;
+        padding: 1% 0;
+    }
+}
