@@ -6,7 +6,7 @@
         <div class="category-content">
             <h4 class="category-content__heading">{{category.name}}</h4>
             <p class="category-content__description">{{category.description}} </p>
-            <a class="category-content__product-link" [routerLink]="['/products/list']">Explore {{category.name}}</a>
+            <a class="category-content__product-link" [routerLink]="['/products/list']"  [queryParams]="{ categoryId: category.id}">Explore {{category.name}}</a>
         </div>
     </section>
 </ng-container>

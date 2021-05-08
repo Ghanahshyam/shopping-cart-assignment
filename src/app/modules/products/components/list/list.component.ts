@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { ProductCategory } from './../../../../models/product-category.model';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
@@ -17,9 +18,9 @@ export class ListComponent implements OnInit {
   productList: Product[];
   productListSubs$: Subscription;
 
-  selectedCategory:string;
+  selectedCategoryId:string;
 
-  constructor(private productsService:ProductsService) { }
+  constructor(private productsService:ProductsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getCategoryList();  
@@ -37,12 +38,21 @@ export class ListComponent implements OnInit {
     this.productListSubs$ = this.productCategoryListSubs$ = this.productsService.getProductList()
     .subscribe(productList => {
       this.productList = productList;
+
+      this.route.queryParamMap
+      .subscribe(params => {
+        this.selectedCategoryId = params.get('categoryId');
+      });
     })
   }
 
   ngOnDestroy() {
     this.productCategoryListSubs$.unsubscribe();
     this.productListSubs$.unsubscribe();
+  }
+
+  setSelectedCategory(productCategoryId) {
+    this.selectedCategoryId = productCategoryId;
   }
 
 }

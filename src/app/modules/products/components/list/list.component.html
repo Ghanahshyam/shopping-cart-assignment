@@ -1,12 +1,12 @@
 <main class="main-container">
     <aside class="aside-category-wrapper">
-        <div class="category" *ngFor="let category of productCategoryList | removeNoImageCategory">
-            {{ category.name }}
+        <div class="category" *ngFor="let productCategory of productCategoryList | removeNoImageCategory" (click)="setSelectedCategory(productCategory.id)">
+            {{ productCategory.name }}
         </div>
     </aside>
     <!-- <sb-product-details-card></sb-product-details-card> -->
     <section class="products-wrapper">
-        <article class="product-details" *ngFor="let product of productList">
+        <article class="product-details" *ngFor="let product of productList | filterByCategory:selectedCategoryId">
             <h6 class="product-details__name">{{product.name}}</h6>
             <div class="product-details__image">
                 <img src="{{product.imageURL}}" alt="{{product.name}}">

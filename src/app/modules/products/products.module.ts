@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { CategoryOverviewCardComponent } from './components/category-overview-card/category-overview-card.component';
 import { RemoveNoImageCategoryPipe } from './pipes/remove-no-image-category/remove-no-image-category.pipe';
 import { ProductDetailsCardComponent } from './components/product-details-card/product-details-card.component';
+import { FilterByCategoryPipe } from './pipes/filter-by-category/filter-by-category.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ProductDetailsCardComponent } from './components/product-details-card/p
     OffersCarouselComponent,
     CategoryOverviewCardComponent,
     RemoveNoImageCategoryPipe,
-    ProductDetailsCardComponent
+    ProductDetailsCardComponent,
+    FilterByCategoryPipe
   ],
   imports: [
     CommonModule,
