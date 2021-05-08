@@ -12,6 +12,7 @@
         flex-direction: column;
         margin-right: 60px;
         // justify-content: center;
+        flex: 0 0 35%;
     
         .sb-aside__head {
             font-weight: 600;
@@ -21,4 +22,41 @@
             font-weight: 600;
         }
     }
+
+    .section-form {
+        flex: 0 0 35%;   
+    }
 }
+
+
+// MEDIA QUERIES
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .login-register-container {
+        padding-top: 25px;
+        flex-direction: column;
+        margin: 0px 10%;
+    }
+    
+}
+
+// /* Small devices (portrait tablets and large phones, 600px and up) */
+// @media only screen and (min-width: 600px) {
+
+// }
+
+// /* Medium devices (landscape tablets, 768px and up) */
+// @media only screen and (min-width: 768px) {
+
+// }
+
+// /* Large devices (laptops/desktops, 992px and up) */
+// @media only screen and (min-width: 992px) {
+
+// }
+
+// /* Extra large devices (large laptops and desktops, 1200px and up) */
+// @media only screen and (min-width: 1200px) {
+
+// }

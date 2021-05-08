@@ -1,13 +1,26 @@
 <header class="sb-header" role="banner">
     <div class="header-container"> 
-        <img src="static/images/logo_2x.png" alt="sabka-bajar-logo" class="header__logo">
+        <div class="collapsable-div">
+            <a (click)="isCollapsed = !isCollapsed"
+                [attr.aria-expanded]="!isCollapsed" 
+                aria-controls="collapseBasic">
+                <div id="nav-icon" [ngClass]="{'open': !isCollapsed }">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </a>
+        </div>
+        
 
+        <img src="static/images/logo_2x.png" alt="sabka-bajar-logo" class="header__logo">
+       
         <nav class="header-nav" role="navigation">
             <ul>
-                <li> 
+                <li  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> 
                     <a [routerLink]="['/products/home']">Home</a>
                 </li>
-                <li>
+                <li  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a [routerLink]="['/products/list']">Product</a>
                 </li>
             </ul>
@@ -29,7 +42,27 @@
             </div>
         </div>
         
-
     </div>
             
 </header>
+
+<div [collapse]="isCollapsed">
+    <div class="card-header collapsable-nav">
+        <nav class="header-nav" role="navigation">
+            <ul>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> 
+                    <a [routerLink]="['/products/home']" (click)="isCollapsed=!isCollapsed">Home</a>
+                </li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> 
+                    <a [routerLink]="['/products/list']" (click)="isCollapsed=!isCollapsed">Products</a>
+                </li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="['/user/register']" (click)="isCollapsed=!isCollapsed">Register</a>
+                </li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> 
+                    <a [routerLink]="['/user/login']" (click)="isCollapsed=!isCollapsed">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

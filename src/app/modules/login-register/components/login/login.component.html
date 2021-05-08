@@ -1,13 +1,26 @@
-<form class="login-form">
-    <div class="input-container input--email">
-        <input type="email" name="email" placeholder="Email"  id="email" class="form-control">
-        <span class="label">Email</span>
+<form class="login-form" #loginForm="ngForm" (ngSubmit)="loginForm.valid && loginFormSubmit(loginForm)">
+    <div class="input-container input--email mb-3">
+        <input type="email" name="email" placeholder="Email" id="email" class="form-control" #emailRef="ngModel" 
+        ngModel required email [pattern]="utilityService.emailPattern" autocomplete="off">
+        <label for="email" class="label">Email</label>
     </div>
-    <div class="input-container input--password">
-        <input type="password" name="password" placeholder="Password" id="password" class="form-control"> 
-        <span class="label">Password</span>
+    <div *ngIf="emailRef.touched && emailRef?.errors && (emailRef?.touched || emailRef?.dirty) || loginForm.submitted" class="error-container">
+        <div class="form-error" *ngIf="emailRef?.errors?.required">*Email is required.</div>
+        <div class="form-error" *ngIf="emailRef?.errors?.email || emailRef?.errors?.pattern">*Invalid Email format ex:- abc@ab.com</div>
     </div>
+    <div class="input-container input--password mb-3">
+        <input type="password" name="password" placeholder="Password" id="password" class="form-control" #passwordRef="ngModel" 
+            ngModel required [pattern]="utilityService.passwordPattern" autocomplete="off"> 
+        <label for="password" class="label">Password</label>        
+    </div>
+    <div *ngIf="passwordRef.touched && passwordRef?.errors && (passwordRef?.touched || passwordRef?.dirty) || loginForm.submitted" class="error-container">
+        <div class="form-error" *ngIf="passwordRef?.errors?.required" >*Password is required.</div>
+        <div class="form-error" *ngIf="passwordRef?.errors?.email || passwordRef?.errors?.pattern">
+            *Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
+            letter and 1 number</div>
+    </div> 
 
-    <button type="submit" class="btn btn--submit">Login</button>
+    <button type="submit" class="btn btn--submit" [disabled]="loginForm.submitted && loginForm.invalid">Login</button>
 </form>
+
 

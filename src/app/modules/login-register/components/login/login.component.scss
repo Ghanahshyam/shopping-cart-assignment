@@ -2,15 +2,15 @@
 
 .login-form {
     display: flex;
-}
-
-form {
-   display: flex;
-   flex-direction: column;
+    flex-direction: column;
+    width: 70%;
 
     .input-container {
         position: relative;
-        margin-bottom: 10%;
+
+        &.input--email {
+            margin-bottom: 2%;
+        }
     }
 
     .btn {
@@ -20,8 +20,8 @@ form {
     .btn--submit {
         border-radius: 2px;
         background-color: $btn-submit-bg-color;   
-        margin: 10% 0;
-        width: 142%;
+        margin: 5% 0;
+        width: 140%;
     }
 
     .btn--submit:active,
@@ -33,5 +33,22 @@ form {
         box-shadow: none;
         border: none;
         outline: none;
+    }
+
+    .ng-invalid.ng-touched {
+        border-color: red;
+    }
+
+    .error-container {
+        width: 140%;
+        margin-top: -4%;
+        margin-bottom: 2%;
+
+        .form-error {
+            color: #f33b3b;
+            font-size: 80%;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
     }
 }

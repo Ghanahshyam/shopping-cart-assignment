@@ -5,7 +5,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CartSvgComponent } from './components/cart-svg/cart-svg.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+// NGX-BOOTSTRAP-IMPORTS
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,16 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     CarouselModule,
     RouterModule,
     CommonModule,
-    FormsModule
+    CollapseModule.forRoot(),
+    FormsModule,
   ],
   exports : [
-    CarouselModule,
     FormsModule,
     HeaderComponent,
     FooterComponent,
-    CartSvgComponent
+    CartSvgComponent,
+    CarouselModule,
+    CollapseModule
   ]
 })
 export class SharedModule { }

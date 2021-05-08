@@ -23,4 +23,8 @@ export class RestApiService {
   delete(url: string) {
     return this.http.delete(url);
   }
+
+  postFormData(url, formData) {
+    return this.http.post(url, formData);
+  }
 }
