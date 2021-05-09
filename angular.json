@@ -30,7 +30,6 @@
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/assets/scss/modules/_grid.scss",
               "src/styles.scss"
             ],
             "stylePreprocessorOptions": {

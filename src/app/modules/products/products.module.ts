@@ -7,9 +7,10 @@ import { ListComponent } from './components/list/list.component';
 import { OffersCarouselComponent } from './components/offers-carousel/offers-carousel.component';
 import { SharedModule } from '../shared/shared.module';
 import { CategoryOverviewCardComponent } from './components/category-overview-card/category-overview-card.component';
-import { RemoveNoImageCategoryPipe } from './pipes/remove-no-image-category/remove-no-image-category.pipe';
 import { ProductDetailsCardComponent } from './components/product-details-card/product-details-card.component';
+// PIPES
 import { FilterByCategoryPipe } from './pipes/filter-by-category/filter-by-category.pipe';
+import { RemoveNoImageCategoryPipe } from './pipes/remove-no-image-category/remove-no-image-category.pipe';
 
 @NgModule({
   declarations: [

@@ -6,13 +6,22 @@ $carousel-nav-bg-color: #231f1fe3;
     margin: 2% 10%;
     margin-bottom: 10px;
     @include home-card-box-shadow;
+
+    @include respond(phone) {
+        margin: 2% 1%;
+    }
     
     .sb-carousel {
         slide {
             img.offer-img {
                 display: block; 
                 width: 100%; 
-                height:275px;
+                height: 275px;
+
+                @include respond(phone) {
+                    width: 100%;
+                    height: 20rem;
+                }
             }
         }
     }
@@ -22,6 +31,9 @@ $carousel-nav-bg-color: #231f1fe3;
     background: none;
     background-image: none;
     margin-right: 75px;
+    @include respond(phone) {
+       display: none;
+    }
 }
 
 ::ng-deep span.carousel-control-next-icon {
@@ -35,6 +47,10 @@ $carousel-nav-bg-color: #231f1fe3;
     padding: 5px;
     background-color: $carousel-nav-bg-color;
 
+    @include respond(phone) {
+        content: none;
+    }
+
 }
     
 ::ng-deep .carousel-control-next-icon::before {
@@ -42,6 +58,10 @@ $carousel-nav-bg-color: #231f1fe3;
     content: "NEXT";
     padding: 5px;
     background-color: $carousel-nav-bg-color;
+
+    @include respond(phone) {
+        content: none;
+    }
 }
 
 ::ng-deep .carousel-indicators {

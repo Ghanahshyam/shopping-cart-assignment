@@ -52,7 +52,8 @@ export class ListComponent implements OnInit {
   }
 
   setSelectedCategory(productCategoryId) {
-    this.selectedCategoryId = productCategoryId;
+    this.selectedCategoryId = this.selectedCategoryId === productCategoryId ? '' : productCategoryId;
+    
   }
 
 }

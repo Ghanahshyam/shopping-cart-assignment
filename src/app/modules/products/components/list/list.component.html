@@ -1,6 +1,8 @@
 <main class="main-container">
     <aside class="aside-category-wrapper">
-        <div class="category" *ngFor="let productCategory of productCategoryList | removeNoImageCategory" (click)="setSelectedCategory(productCategory.id)">
+        <div class="category" 
+            [ngClass]="{'active':selectedCategoryId===productCategory.id}"
+            *ngFor="let productCategory of productCategoryList | removeNoImageCategory" (click)="setSelectedCategory(productCategory.id)">
             {{ productCategory.name }}
         </div>
     </aside>

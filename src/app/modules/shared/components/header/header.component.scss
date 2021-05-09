@@ -1,34 +1,45 @@
 @import 'helper';
 
-$box-shadow-color: dimgrey;
-$nav-active-bg-color: grey;
-$nav-active-bg-color-light:#d6d6d6;
-$nav-cart-bg-color: #efecec;
-$login-register-links-color: #292929;
-$header-nav-color: gray;
-
-@mixin botttom-box-shadow {
-    -webkit-box-shadow: 0px 7px 6px -9px $box-shadow-color;
-	   -moz-box-shadow: 0px 7px 6px -9px $box-shadow-color;
-	        box-shadow: 0px 7px 6px -9px $box-shadow-color;
-}
 .sb-header {
-    @include botttom-box-shadow;
+    @include header-botttom-box-shadow;
     margin-bottom: 1px;
 
     .header-container {
         display: flex;
-        height: 100px;
+        height: 10rem;
         width: 80%;   
         margin-left:10%;
         padding: 5px 0px 0px;
 
+        @include respond(phone) { 
+            width: 96%;
+            margin: 0 2%;
+            padding: 0px;
+            align-items: center;
+            height: 5rem;
+        }
+
         .collapsable-div {
             display: none;
+
+            @include respond(phone) { 
+                display: block;
+            }
         }
 
         .header__logo {
             height: 90%;
+
+            @include respond(phone) { 
+                height: 85%;
+                position: relative;
+                left:25%;
+            }
+        }
+        .header-nav {
+            @include respond(phone) { 
+                display: none;
+            }    
         }
 
         .header-nav__right {
@@ -48,6 +59,12 @@ $header-nav-color: gray;
                 justify-content: center;
                 border-radius: 2px 2px 0px 0px;
 
+                @include respond(phone) { 
+                    height: 5rem;
+                    width: 44%;
+                    margin-right: -5%;
+                }
+
                 .cart-overview__icon {
                     width: 25%;
                 }   
@@ -56,9 +73,11 @@ $header-nav-color: gray;
                     font-size: 76%;
                     padding-right: 5px;
                     font-weight: 600;
+                    @include respond(phone) { 
+                        font-size: 120%;
+                    }
                 }
             }
-
            
         }
 
@@ -66,6 +85,9 @@ $header-nav-color: gray;
             margin-left: auto;
             font-size: 75%;
             font-weight: 700;
+            @include respond(phone) { 
+                display: none;
+            }
 
             a {
                 padding: 5px;
@@ -93,16 +115,27 @@ $header-nav-color: gray;
     align-self: flex-end;
     padding: 5px 140px;
     font-size: 75%;
+    @include respond(phone) {
+        padding: 0;
+    }
 
     ul {
         list-style: none;
         margin-bottom: 0;
+        @include respond(phone) { 
+            display: flex;
+            flex-direction: column;
+        }
 
         li {
             display: inline-block;
             margin-right: 20px;                    
             padding: 5px;
             cursor: pointer;
+            @include respond(phone) { 
+                width: 100%;
+                margin-right: 0px;
+            }
 
             a {
                 color: $header-nav-color;
@@ -119,6 +152,25 @@ $header-nav-color: gray;
                 transform: scale(1);
                 background-color: $nav-active-bg-color;   
                 border-radius: 2px 2px 2px 2px;
+
+                @include respond(phone) { 
+                    background-color: $nav-active-bg-color-light;   
+                    border-radius: 2px 2px 2px 2px;
+
+                    a {
+                        color: #fff;
+                    }
+                }
+            }
+
+            &.active{
+                @include respond(phone) { 
+                    background-color: $nav-active-bg-color-light;   
+                    border-radius: 2px 2px 2px 2px;
+                    a {
+                        color: #fff;
+                    }
+                }
             }
         }
 
@@ -138,10 +190,10 @@ $header-nav-color: gray;
 
 // HAMBURGER ICON
 #nav-icon {
-    width: 60px;
-    height: 45px;
+    width: 36px;
+    height: 27px;
     position: relative;
-    margin: 50px auto;
+    margin:0;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -155,11 +207,11 @@ $header-nav-color: gray;
   
   #nav-icon span {
     display: block;
-    position: absolute;
-    height: 9px;
+    position: sticky;
+    height: 4px;
     width: 100%;
     background: $btn-submit-bg-color;
-    border-radius: 9px;
+    border-radius: 6px;
     opacity: 1;
     left: 0;
     -webkit-transform: rotate(0deg);
@@ -170,10 +222,6 @@ $header-nav-color: gray;
     -moz-transition: .25s ease-in-out;
     -o-transition: .25s ease-in-out;
     transition: .25s ease-in-out;
-  }
-  /* Icon 4 */
-  
-  #nav-icon {
   }
   
   #nav-icon span:nth-child(1) {
@@ -201,12 +249,10 @@ $header-nav-color: gray;
   }
   
   #nav-icon.open span:nth-child(1) {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: -3px;
-    left: 8px;
+    -webkit-transform: rotate(39deg);
+    -moz-transform: rotate(39deg);
+    -o-transform: rotate(39deg);
+    transform: rotate(39deg);
   }
   
   #nav-icon.open span:nth-child(2) {
@@ -215,115 +261,11 @@ $header-nav-color: gray;
   }
   
   #nav-icon.open span:nth-child(3) {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    top: 39px;
-    left: 8px;
+    -webkit-transform: rotate(-39deg);
+    -moz-transform: rotate(-39deg);
+    -o-transform: rotate(-39deg);
+    transform: rotate(-39deg);
   }
 
-// MEDIA QUERIES
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    .sb-header .header-container {
-        width: 96%;
-        margin: 0 2%;
-        padding:0px; 
-        align-items: center;
 
-        .collapsable-div {
-            display: block;
-        }
 
-        .header__logo {
-            height: 55%;
-            padding-left: 20px;
-        }
-
-        .header-nav {
-            display: none;
-        }
-
-        .header-nav__right {
-           
-            .cart-overview {
-                height: 100px;
-                width: 80%;
-                margin-right: -7%;
-
-                .cart-overview__icon {
-                    width: 52%;
-                }   
-
-                .cart-overview__count {
-                    font-size: 120%;
-                 
-                    .cart-text {
-                        display: none;
-                    }
-                }
-            }
-        }   
-    
-        .login-register {
-            display: none;
-        }
-    }
-
-    .header-nav {
-        font-size: 75%;
-        padding: 0;
-       
-        ul {
-            display: flex;
-            flex-direction: column;
-
-            li {
-                width: 100%;
-                margin-right: 0px;
-
-                &:active,
-                &:hover {
-                    background-color: $nav-active-bg-color-light;   
-                    border-radius: 2px 2px 2px 2px;
-
-                    a {
-                        color: #fff;
-                    }
-                }
-            }
-
-            li.active {
-                background-color: $nav-active-bg-color-light;   
-                border-radius: 2px 2px 2px 2px;
-
-                a {
-                    color: #fff;
-                }
-            }
-
-        }
-    }
-  
-}
-
-// /* Small devices (portrait tablets and large phones, 600px and up) */
-// @media only screen and (min-width: 600px) {
-
-// }
-
-// /* Medium devices (landscape tablets, 768px and up) */
-// @media only screen and (min-width: 768px) {
-
-// }
-
-// /* Large devices (laptops/desktops, 992px and up) */
-// @media only screen and (min-width: 992px) {
-
-// }
-
-// /* Extra large devices (large laptops and desktops, 1200px and up) */
-// @media only screen and (min-width: 1200px) {
-
-// }
