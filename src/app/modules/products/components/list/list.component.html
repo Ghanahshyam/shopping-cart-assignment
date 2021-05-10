@@ -1,11 +1,11 @@
 <main class="main-container">
-    <aside class="aside-category-wrapper">
+    <section class="section-category-wrapper">
         <div class="category" 
             [ngClass]="{'active':selectedCategoryId===productCategory.id}"
             *ngFor="let productCategory of productCategoryList | removeNoImageCategory" (click)="setSelectedCategory(productCategory.id)">
             {{ productCategory.name }}
         </div>
-    </aside>
+    </section>
     <!-- <sb-product-details-card></sb-product-details-card> -->
     <section class="products-wrapper">
         <article class="product-details" *ngFor="let product of productList | filterByCategory:selectedCategoryId">

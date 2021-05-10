@@ -5,10 +5,17 @@
     overflow: auto;
     width: 80%;
     margin: 0 10%;
+    @include respond(phone) {
+      width: 100%;
+      margin: 0 1%;
+    }
     
-    .aside-category-wrapper {
+    .section-category-wrapper {
         flex: 0 0 20%;
         background-color: $aside-category-bg-color; 
+        @include respond(phone) {
+            display: none;
+        }
         
         .category {
             font-weight: 500;
@@ -35,6 +42,9 @@
         display: flex;
         flex-wrap: wrap;
         flex: 0 0 80%;
+        @include respond(phone) {
+            flex: 0 0 100%;
+        }
        
         .product-details {
             display: flex;
@@ -44,16 +54,34 @@
             margin: 1%;
             box-shadow: 2px 0 3px -3px #888;
             border-bottom: 1px dashed darkgrey;
+            @include respond(phone) {
+                flex: 0 0 100%;
+                flex-direction: row;
+                margin: 0;
+                box-shadow: none;
+                position: relative;
+                flex-wrap: wrap;
+                padding: 1rem 1rem 0 0;
+            }
 
             .product-details__name {
                 font-weight: 600;
                 height: 13%;
                 margin-bottom: 1px;
+                @include respond(phone) {
+                    height: 2rem;
+                    flex: 0 0 100%;
+                    font-size: 1.5rem;
+                }
             }
 
             .product-details__image {
                 width: 100%;
                 height: 40%;
+                @include respond(phone) {
+                    flex: 0 0 50%;
+                    height: auto;
+                }
 
                 img {
                     width: 100%;
@@ -68,6 +96,11 @@
                 width: 100%;
                 padding: 10px;
                 height: -webkit-fill-available;
+                @include respond(phone) {
+                    flex: 0 0 50%;
+                    font-size: 1rem;
+                    height: fit-content;
+                }
             }
 
             .product-details__buy-info {
@@ -77,6 +110,16 @@
                 align-items: baseline;
                 margin-top: -6%;
                 padding: 0px 5px;
+                @include respond(phone) {
+                    width: 48%;
+                    font-size: 3rem;
+                    justify-content: center;
+                    position: absolute;
+                    left: 22.4rem;
+                    bottom: 0;
+                    background-color: $theme-magenta;
+                    flex-direction: row-reverse;
+                 }
 
                 .product-details__price {
                     font-size: 55%;
